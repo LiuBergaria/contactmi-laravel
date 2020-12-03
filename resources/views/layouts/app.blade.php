@@ -23,7 +23,7 @@
 <body>
     @include('app.menu')
     <main>
-        @include('app.contacts-list', ['class' => 'd-none d-md-block desktop'])
+        @include('app.contacts-list', ['class' => 'd-none d-md-flex desktop'])
         @yield('content')
     </main>
 </body>
