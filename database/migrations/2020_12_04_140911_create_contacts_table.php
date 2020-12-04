@@ -20,6 +20,7 @@ class CreateContactsTable extends Migration
             $table->boolean('fg_favorite')->default(false);
             $table->string('cep', 8)->nullable();
             $table->string('full_address')->nullable();
+            $table->string('address_number')->nullable();
 
             $table->timestamps();
 
