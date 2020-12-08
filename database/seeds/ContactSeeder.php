@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Seeders;
+
 use App\Contact;
 use App\ContactEmail;
 use App\ContactPhone;
