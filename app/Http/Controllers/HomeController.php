@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\Contracts\ContactServiceInterface;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -29,8 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $contacts = $this->contactService->getAllByUserId(Auth::user()->id);
-
-        return view('app.home', compact('contacts'));
+        return $this->viewWithContacts('app.home');
     }
 }
