@@ -38,7 +38,7 @@ class ContactService implements ContactServiceInterface
 
             return new ServiceResponse(true, 'Contatos retornados', $result);
         } catch (Throwable $e) {
-            return new ServiceResponse(false, 'Ocorreu um erro ao retornaros contatos');
+            return new ServiceResponse(false, 'Ocorreu um erro ao retornar os contatos');
         }
     }
 }
