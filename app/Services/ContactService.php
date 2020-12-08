@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Services\Contracts\ContactServiceInterface;
 use App\Repositories\Contracts\ContactRepository;
+use App\Services\Responses\ServiceResponse;
+use Throwable;
 
 class ContactService implements ContactServiceInterface
 {
@@ -23,14 +25,20 @@ class ContactService implements ContactServiceInterface
      * ___
      * @param integer $userId
      *
-     * @return array<App\Contact>
+     * @return ServiceResponse
      */
     public function getAllByUserId(int $userId)
     {
-        return $this->repository->where([
-            'id_user' => $userId,
-        ])
-            ->orderBy('name', 'asc')
-            ->get();
+        try {
+            $result = $this->repository->where([
+                'id_user' => $userId,
+            ])
+                ->orderBy('name', 'asc')
+                ->get();
+
+            return new ServiceResponse(true, 'Contatos retornados', $result);
+        } catch (Throwable $e) {
+            return new ServiceResponse(false, 'Ocorreu um erro ao retornaros contatos');
+        }
     }
 }
