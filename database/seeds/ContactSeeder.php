@@ -2,9 +2,9 @@
 
 namespace App\Seeders;
 
-use App\Contact;
-use App\ContactEmail;
-use App\ContactPhone;
+use App\Models\Contact;
+use App\Models\ContactEmail;
+use App\Models\ContactPhone;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 

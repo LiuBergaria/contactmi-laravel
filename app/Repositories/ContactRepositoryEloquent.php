@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Contact;
+use App\Models\Contact;
 use App\Repositories\Contracts\ContactRepository;
 use Prettus\Repository\Eloquent\BaseRepository;
 
