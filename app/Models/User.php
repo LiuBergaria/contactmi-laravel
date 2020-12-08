@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Vincula os contatos do usuário
+     */
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Contact', 'id_user', 'id');
+    }
 }
