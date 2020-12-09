@@ -10,11 +10,11 @@ class ContactController extends Controller
     /**
      * @var ContactServiceInterface
      */
-    private $service;
+    private $contactService;
 
     public function __construct(ContactServiceInterface $contactService)
     {
-        $this->service = $contactService;
+        $this->contactService = $contactService;
     }
 
     /**

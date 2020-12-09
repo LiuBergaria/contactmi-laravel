@@ -10,10 +10,10 @@ class ContactPhoneService implements ContactPhoneServiceInterface
     /**
      * @var ContactPhoneRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactPhoneRepository $contactPhoneRepository)
     {
-        $this->repository = $contactPhoneRepository;
+        $this->contactEmailRepository = $contactPhoneRepository;
     }
 }

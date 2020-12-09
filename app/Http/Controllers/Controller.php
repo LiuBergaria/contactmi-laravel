@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -19,12 +20,12 @@ class Controller extends BaseController
      * Retorna uma determinada view com os contatos já vinculados
      * ___
      * @param  string|null  $view
-     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $data
      * @param  array  $mergeData
      *
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function viewWithContacts($view = null, $data = [], $mergeData = [])
+    public function viewWithContacts(string $view = null, array $data = [], array $mergeData = []): Factory
     {
         /**
          * @var App\Services\Contracts\ContactServiceInterface

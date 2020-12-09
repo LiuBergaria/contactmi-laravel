@@ -12,11 +12,11 @@ class ContactService implements ContactServiceInterface
     /**
      * @var ContactRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactRepository $contactRepository)
     {
-        $this->repository = $contactRepository;
+        $this->contactEmailRepository = $contactRepository;
     }
 
     /**
@@ -27,10 +27,10 @@ class ContactService implements ContactServiceInterface
      *
      * @return ServiceResponse
      */
-    public function getAllByUserId(int $userId)
+    public function getAllByUserId(int $userId): ServiceResponse
     {
         try {
-            $result = $this->repository->where([
+            $result = $this->contactEmailRepository->where([
                 'id_user' => $userId,
             ])
                 ->orderBy('name', 'asc')

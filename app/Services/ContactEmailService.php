@@ -10,10 +10,10 @@ class ContactEmailService implements ContactEmailServiceInterface
     /**
      * @var ContactEmailRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactEmailRepository $contactEmailRepository)
     {
-        $this->repository = $contactEmailRepository;
+        $this->contactEmailRepository = $contactEmailRepository;
     }
 }
