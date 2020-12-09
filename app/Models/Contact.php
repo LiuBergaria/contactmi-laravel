@@ -11,7 +11,7 @@ class Contact extends Model
      */
     public function phones()
     {
-        return $this->hasMany('App\Models\ContactPhone', 'id_contact', 'id');
+        return $this->hasMany(ContactPhone::class, 'id_contact', 'id');
     }
 
     /**
@@ -19,6 +19,6 @@ class Contact extends Model
      */
     public function emails()
     {
-        return $this->hasMany('App\Models\ContactEmail', 'id_contact', 'id');
+        return $this->hasMany(ContactEmail::class, 'id_contact', 'id');
     }
 }

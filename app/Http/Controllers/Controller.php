@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use App\Services\Contracts\ContactServiceInterface;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -30,7 +31,7 @@ class Controller extends BaseController
         /**
          * @var App\Services\Contracts\ContactServiceInterface
          */
-        $contactService = App::make('App\Services\Contracts\ContactServiceInterface');
+        $contactService = app(ContactServiceInterface::class);
 
         $contacts = $contactService->getAllByUserId(Auth::user()->id)->data;
 
