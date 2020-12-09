@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Repositories\Contracts\ContactPhoneRepository;
 use App\Services\Contracts\ContactPhoneServiceInterface;
 
-class ContactPhoneService implements ContactPhoneServiceInterface
+class ContactPhoneService extends BaseService implements ContactPhoneServiceInterface
 {
     /**
      * @var ContactPhoneRepository

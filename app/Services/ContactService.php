@@ -7,7 +7,7 @@ use App\Services\Responses\ServiceResponse;
 use App\Repositories\Contracts\ContactRepository;
 use App\Services\Contracts\ContactServiceInterface;
 
-class ContactService implements ContactServiceInterface
+class ContactService extends BaseService implements ContactServiceInterface
 {
     /**
      * @var ContactRepository
@@ -38,7 +38,7 @@ class ContactService implements ContactServiceInterface
 
             return new ServiceResponse(true, 'Contatos retornados', $result);
         } catch (Throwable $e) {
-            return new ServiceResponse(false, 'Ocorreu um erro ao retornar os contatos');
+            return $this->defaultErrorReturn($e);
         }
     }
 }

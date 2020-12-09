@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Repositories\Contracts\ContactEmailRepository;
 use App\Services\Contracts\ContactEmailServiceInterface;
 
-class ContactEmailService implements ContactEmailServiceInterface
+class ContactEmailService extends BaseService implements ContactEmailServiceInterface
 {
     /**
      * @var ContactEmailRepository
