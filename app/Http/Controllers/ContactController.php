@@ -14,7 +14,6 @@ class ContactController extends Controller
 
     public function __construct(ContactServiceInterface $contactService)
     {
-        $this->middleware('auth');
         $this->service = $contactService;
     }
 
