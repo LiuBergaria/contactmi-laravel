@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactPhoneServiceInterface;
 use App\Repositories\Contracts\ContactPhoneRepository;
+use App\Services\Contracts\ContactPhoneServiceInterface;
 
 class ContactPhoneService implements ContactPhoneServiceInterface
 {

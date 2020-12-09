@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Contact;
-use App\Repositories\Contracts\ContactRepository;
 use Prettus\Repository\Eloquent\BaseRepository;
+use App\Repositories\Contracts\ContactRepository;
 
 class ContactRepositoryEloquent extends BaseRepository implements ContactRepository
 {

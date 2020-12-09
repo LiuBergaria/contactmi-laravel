@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactEmailServiceInterface;
 use App\Repositories\Contracts\ContactEmailRepository;
+use App\Services\Contracts\ContactEmailServiceInterface;
 
 class ContactEmailService implements ContactEmailServiceInterface
 {

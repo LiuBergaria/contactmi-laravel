@@ -2,10 +2,10 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactServiceInterface;
-use App\Repositories\Contracts\ContactRepository;
-use App\Services\Responses\ServiceResponse;
 use Throwable;
+use App\Services\Responses\ServiceResponse;
+use App\Repositories\Contracts\ContactRepository;
+use App\Services\Contracts\ContactServiceInterface;
 
 class ContactService implements ContactServiceInterface
 {
