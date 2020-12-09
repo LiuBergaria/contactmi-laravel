@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use App\Services\Contracts\ContactServiceInterface;
 use Illuminate\Routing\Controller as BaseController;
@@ -24,9 +24,9 @@ class Controller extends BaseController
      * @param  array  $data
      * @param  array  $mergeData
      *
-     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     * @return \Illuminate\View\View
      */
-    public function viewWithContacts(string $view = null, array $data = [], array $mergeData = []): Factory
+    public function viewWithContacts(string $view = null, array $data = [], array $mergeData = []): View
     {
         /**
          * @var App\Services\Contracts\ContactServiceInterface
