@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    protected $fillable = [
+        'id_user',
+        'name',
+        'fg_favorite',
+        'cep',
+        'full_address',
+        'address_number',
+    ];
+
+    protected $casts = [
+        'fg_favorite' => 'bool'
+    ];
+
     /**
      * Vincula os telefones do contato
      */
