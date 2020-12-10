@@ -2,27 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Services\Contracts\ContactServiceInterface;
 
 class HomeController extends Controller
 {
+    /**
+     * @var ContactServiceInterface
+     */
+    private $contactService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ContactServiceInterface $contactService)
     {
-        $this->middleware('auth');
+        $this->contactService = $contactService;
     }
 
     /**
-     * Show the application dashboard.
+     * Retorna a tela inicial com contatos
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('app.home');
+        return $this->viewWithContacts('app.home');
     }
 }

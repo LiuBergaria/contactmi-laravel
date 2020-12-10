@@ -3,14 +3,14 @@
         <button class="btn btn-primary btn-block">Adicionar</button>
     </div>
     <div>
-        @for($i = 0; $i < 15; $i++)
+        @foreach($contacts as $contact)
             <a>
                 <img src="https://picsum.photos/200" alt="Foto">
                 <div>
-                    <strong>Nome do Contato</strong>
-                    <span>016 12345678</span>
+                    <strong>{{$contact->name}}</strong>
+                    <span>{{$contact->phones[0]->phone ?? ''}}</span>
                 </div>
             </a>
-        @endfor
+        @endforeach
     </div>
 </div>
