@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -42,6 +42,6 @@ class User extends Authenticatable
      */
     public function contacts()
     {
-        return $this->hasMany('App\Models\Contact', 'id_user', 'id');
+        return $this->hasMany(Contact::class, 'id_user', 'id');
     }
 }

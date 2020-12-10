@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\User;
 use App\Models\Contact;
 use App\Models\ContactEmail;
 use App\Models\ContactPhone;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
