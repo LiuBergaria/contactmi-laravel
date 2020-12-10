@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Seeders;
-
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,9 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            UserSeeder::class,
-            ContactSeeder::class
-        ]);
+        $this->call(UserSeeder::class);
     }
 }
