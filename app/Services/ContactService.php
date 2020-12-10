@@ -2,21 +2,21 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactServiceInterface;
-use App\Repositories\Contracts\ContactRepository;
-use App\Services\Responses\ServiceResponse;
 use Throwable;
+use App\Services\Responses\ServiceResponse;
+use App\Repositories\Contracts\ContactRepository;
+use App\Services\Contracts\ContactServiceInterface;
 
-class ContactService implements ContactServiceInterface
+class ContactService extends BaseService implements ContactServiceInterface
 {
     /**
      * @var ContactRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactRepository $contactRepository)
     {
-        $this->repository = $contactRepository;
+        $this->contactEmailRepository = $contactRepository;
     }
 
     /**
@@ -27,10 +27,10 @@ class ContactService implements ContactServiceInterface
      *
      * @return ServiceResponse
      */
-    public function getAllByUserId(int $userId)
+    public function getAllByUserId(int $userId): ServiceResponse
     {
         try {
-            $result = $this->repository->where([
+            $result = $this->contactEmailRepository->where([
                 'id_user' => $userId,
             ])
                 ->orderBy('name', 'asc')
@@ -38,7 +38,7 @@ class ContactService implements ContactServiceInterface
 
             return new ServiceResponse(true, 'Contatos retornados', $result);
         } catch (Throwable $e) {
-            return new ServiceResponse(false, 'Ocorreu um erro ao retornar os contatos');
+            return $this->defaultErrorReturn($e);
         }
     }
 }

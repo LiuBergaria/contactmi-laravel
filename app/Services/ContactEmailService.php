@@ -2,18 +2,18 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactEmailServiceInterface;
 use App\Repositories\Contracts\ContactEmailRepository;
+use App\Services\Contracts\ContactEmailServiceInterface;
 
-class ContactEmailService implements ContactEmailServiceInterface
+class ContactEmailService extends BaseService implements ContactEmailServiceInterface
 {
     /**
      * @var ContactEmailRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactEmailRepository $contactEmailRepository)
     {
-        $this->repository = $contactEmailRepository;
+        $this->contactEmailRepository = $contactEmailRepository;
     }
 }

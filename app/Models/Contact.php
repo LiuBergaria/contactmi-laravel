@@ -6,12 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    protected $fillable = [
+        'id_user',
+        'name',
+        'fg_favorite',
+        'cep',
+        'full_address',
+        'address_number',
+    ];
+
+    protected $casts = [
+        'fg_favorite' => 'bool'
+    ];
+
     /**
      * Vincula os telefones do contato
      */
     public function phones()
     {
-        return $this->hasMany('App\Models\ContactPhone', 'id_contact', 'id');
+        return $this->hasMany(ContactPhone::class, 'id_contact', 'id');
     }
 
     /**
@@ -19,6 +32,6 @@ class Contact extends Model
      */
     public function emails()
     {
-        return $this->hasMany('App\Models\ContactEmail', 'id_contact', 'id');
+        return $this->hasMany(ContactEmail::class, 'id_contact', 'id');
     }
 }

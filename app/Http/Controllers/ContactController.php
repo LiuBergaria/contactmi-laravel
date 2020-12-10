@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Contracts\ContactServiceInterface;
 use Illuminate\Http\Request;
+use App\Services\Contracts\ContactServiceInterface;
 
 class ContactController extends Controller
 {
     /**
      * @var ContactServiceInterface
      */
-    private $service;
+    private $contactService;
 
     public function __construct(ContactServiceInterface $contactService)
     {
-        $this->middleware('auth');
-        $this->service = $contactService;
+        $this->contactService = $contactService;
     }
 
     /**

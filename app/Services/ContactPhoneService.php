@@ -2,18 +2,18 @@
 
 namespace App\Services;
 
-use App\Services\Contracts\ContactPhoneServiceInterface;
 use App\Repositories\Contracts\ContactPhoneRepository;
+use App\Services\Contracts\ContactPhoneServiceInterface;
 
-class ContactPhoneService implements ContactPhoneServiceInterface
+class ContactPhoneService extends BaseService implements ContactPhoneServiceInterface
 {
     /**
      * @var ContactPhoneRepository
      */
-    private $repository;
+    private $contactEmailRepository;
 
     public function __construct(ContactPhoneRepository $contactPhoneRepository)
     {
-        $this->repository = $contactPhoneRepository;
+        $this->contactEmailRepository = $contactPhoneRepository;
     }
 }
